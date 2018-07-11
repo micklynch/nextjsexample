@@ -7,10 +7,16 @@ const CurrenciesPage = (props) =>
     <ul>
       {props.currencies.map((currency) => (
         <li key={currency.id}>
-            <a>{currency.country} with exchange rate: {currency.exchangerate}</a>
+            {currency.country} with exchange rate: {currency.exchangerate}
+            <button onClick={showModal(currency.id)}>do something </button>
         </li>
       ))}
     </ul>
+    <style jsx> {`
+      button {
+        align: right;
+      }
+    `}</style>
   </Layout>
 
 CurrenciesPage.getInitialProps = async () => {
@@ -19,7 +25,11 @@ CurrenciesPage.getInitialProps = async () => {
   console.log(`Count: ${data.length}`)
   return {
     currencies: data
-  }
+  }  
+}
+
+const showModal = (id) => {
+  console.log(id);
 }
 
 export default CurrenciesPage

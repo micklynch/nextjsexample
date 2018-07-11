@@ -3,9 +3,9 @@ import Header from './header'
 
 const Layout = (props) =>
 <div className="App">
-    <Header></Header>
+    <Header />
     {props.children}
-    <Footer></Footer>
+    <Footer />
 </div>
 
 export default Layout
